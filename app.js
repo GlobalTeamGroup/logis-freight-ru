@@ -1,5 +1,5 @@
 ﻿// ============================================================
-// LOGIS FREIGHT â€” app.js
+// LOGIS FREIGHT — app.js
 // Cinematic Scroll Engine | LERP 0.02 | CONCURRENCY 48
 // ============================================================
 
@@ -15,7 +15,7 @@ const FRAME_DIR = isMobile ? 'frames-mobile' : 'frames-webp';
 // === CANVAS ===
 const canvas = document.getElementById('gl-canvas');
 const ctx    = canvas.getContext('2d');
-let canvasDpr = 1; // module-level â€” MUST match between resize() and drawFrame()
+let canvasDpr = 1; // module-level — MUST match between resize() and drawFrame()
 
 function resize() {
   canvasDpr = Math.min(devicePixelRatio || 1, isMobile ? 1.5 : 2);
@@ -85,7 +85,7 @@ function drawFrame(idx) {
   const img = frames[Math.max(0, Math.min(Math.round(idx), TOTAL_FRAMES - 1))];
   if (!img || !img.complete) return;
 
-  // Use innerWidth/innerHeight â€” ctx.setTransform handles DPR scaling
+  // Use innerWidth/innerHeight — ctx.setTransform handles DPR scaling
   const W = innerWidth;
   const H = innerHeight;
 
@@ -129,7 +129,7 @@ function startAnim() {
   })();
 }
 
-// === INTERSECTION OBSERVER â€” section activation ===
+// === INTERSECTION OBSERVER — section activation ===
 const pages    = Array.from(document.querySelectorAll('.page'));
 const navLinks = Array.from(document.querySelectorAll('.nav-link'));
 
@@ -183,11 +183,11 @@ function handleFormSubmit(e) {
   e.preventDefault();
   const btn = e.target.querySelector('button[type="submit"]');
   if (btn) {
-    btn.textContent = 'âœ“ Ð—Ð°ÑÐ²ÐºÐ° Ð¾Ñ‚Ð¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð°!';
+    btn.textContent = '✓ Заявка отправлена!';
     btn.style.borderColor = '#FFC107';
     btn.style.color = '#FFC107';
     setTimeout(() => {
-      btn.textContent = 'ÐžÑ‚Ð¿Ñ€Ð°Ð²Ð¸Ñ‚ÑŒ Ð·Ð°ÑÐ²ÐºÑƒ';
+      btn.textContent = 'Отправить заявку';
       btn.style.borderColor = '';
       btn.style.color = '';
       e.target.reset();
